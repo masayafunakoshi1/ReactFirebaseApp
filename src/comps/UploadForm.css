@@ -1,0 +1,8 @@
+.fileInsertButton{
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    font-weight: lighter;
+    font-size: 35px;
+    top: 10px;
+}
