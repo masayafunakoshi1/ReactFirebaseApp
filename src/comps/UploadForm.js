@@ -24,7 +24,6 @@ const UploadForm = () => {
     return (
         <form>
             <motion.label className="fileInsertButton"
-                Frame
                 whileHover={{ scale: 1.2, rotate: 90 }}>
                 <input type="file" onChange={changeHandler} />
                 <span>+</span>
