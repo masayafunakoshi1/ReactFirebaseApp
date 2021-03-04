@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
-const FadeInSections = (props) => {
+const FadeInSections = (props: any) => {
     const [isVisible, setVisible] = useState(true);
-    const domRef = React.useRef();
+    const domRef = React.useRef<any>();
 
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {

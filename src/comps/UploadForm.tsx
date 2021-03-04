@@ -2,14 +2,30 @@ import React, { useState } from "react"
 import ProgressBar from "./ProgressBar";
 import { motion } from "framer-motion"
 import "./UploadForm.css"
+import { FilesProps } from '../App'
 
-const UploadForm = () => {
-    const [file, setFile] = useState(null);
-    const [error, setError] = useState(null);
+// export interface newFilesProps{
+//     file:{
+//         url: string;
+//         progress: number;
+//         name: string;
+//         size: any;
+//         type: any;
+//         lastModified: any;
+//         arrayBuffer: any;
+//         slice: any; 
+//         stream: any;
+//         text: any;
+//     };
+// }
+
+const UploadForm: React.FC <FilesProps> = () => {
+    const [file, setFile] = useState<FilesProps | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     const types = ["image/png", "image/jpeg"];
 
-    const changeHandler = (e) => {
+    const changeHandler = (e: any) => {
         let selected = e.target.files[0];
 
         if (selected && types.includes(selected.type)) {
@@ -40,3 +56,5 @@ const UploadForm = () => {
 }
 
 export default UploadForm;
+
+

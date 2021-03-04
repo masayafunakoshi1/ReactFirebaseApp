@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import useStorage from "../Hooks/useStorage";
 import { motion } from "framer-motion";
+import {FilesProps} from '../App'
+// import {newFilesProps} from './UploadForm'
 
-const ProgressBar = ({ file, setFile }) => {
+
+const ProgressBar: React.FC <FilesProps>= ({ file, setFile }) => {
     const { url, progress } = useStorage(file);
 
     useEffect(() => {
         if (url) {
-            setFile(null);
+            if(setFile)setFile(null);
         }
     }, [url, setFile])
 
